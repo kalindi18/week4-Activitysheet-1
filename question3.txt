@@ -1,0 +1,21 @@
+import sympy as sp
+
+t = sp.symbols('t')
+f = t**3 - 6*t**2 + 9*t + 2
+
+# (a) Factorise
+print("Factorised:", sp.factor(f))
+
+# (b) Solve equations
+print("f(t) = 0:", sp.solve(f, t))
+print("f(t) = 2:", sp.solve(f - 2, t))
+
+# (c) First and second derivatives
+print("f'(t):", sp.diff(f, t))
+print("f''(t):", sp.diff(f, t, 2))
+
+# (d) Indefinite integral
+print("Indefinite integral:", sp.integrate(f, t))
+
+# (e) Definite integral from 0 to 2
+print("Definite integral:", sp.integrate(f, (t, 0, 2)))
