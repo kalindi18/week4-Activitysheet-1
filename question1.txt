@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+hours = np.array([5, 2, 8, 4, 7, 1, 5, 10, 4, 7,
+                  3, 6, 3, 5, 2, 7, 4, 9, 5, 11])
+
+# Original data
+print("Mean:", np.mean(hours))
+print("Median:", np.median(hours))
+print("Sample variance:", round(np.var(hours, ddof=1),2))
+print("Sample standard deviation:", round(np.std(hours, ddof=1),2))
+
+# Change the first 8 to 12
+hours[2] = 12
+
+# Updated data
+print("\nUpdated mean:", np.mean(hours))
+print("Updated median:", np.median(hours))
+print("Updated sample variance:", round(np.var(hours, ddof=1),2))
+print("Updated sample standard deviation:", round(np.std(hours, ddof=1),2))
+
+# Histogram of updated data
+plt.hist(hours, bins=range(1,12), edgecolor="black")
+plt.xlabel("Study hours")
+plt.ylabel("Number of students")
+plt.title("Updated Study Hours")
+plt.show()
