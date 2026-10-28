@@ -19,3 +19,4 @@ print("Indefinite integral:", sp.integrate(f, t))
 
 # (e) Definite integral from 0 to 2
 print("Definite integral:", sp.integrate(f, (t, 0, 2)))
+
