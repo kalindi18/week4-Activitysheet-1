@@ -9,10 +9,10 @@ folder = Path(__file__).parent
 st.header("Assignment Questions")
 
 question_files = [
-    "question1.txt",
-    "question3.txt",
-    "question 03.txt",
-    "question4.py",
+    "Q1.py",
+    "Q2.py",
+    "Q3.py",
+    "Q4.py",
 ]
 
 for filename in question_files:
