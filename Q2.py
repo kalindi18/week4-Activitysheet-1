@@ -1,0 +1,32 @@
+import numpy as np
+
+A = np.array([[2, 1, 1],
+              [1, 3, 2],
+              [3, 1, 2]])
+
+B = np.array([10, 18, 17])
+
+print("Determinant:")
+print(np.linalg.det(A))
+
+print("Inverse of A:")
+print(np.linalg.inv(A))
+
+eigenvalues, eigenvectors = np.linalg.eig(A)
+
+print("Eigenvalues:")
+print(eigenvalues)
+
+print("Eigenvectors:")
+print(eigenvectors)
+
+X = np.linalg.solve(A, B)
+print("Solution X:")
+print(X)
+
+R = A @ X - B
+print("Residual R:")
+print(R)
+
+print("Euclidean norm of R:")
+print(np.linalg.norm(R, ord=2))
