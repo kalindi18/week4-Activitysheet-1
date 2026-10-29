@@ -1,14 +1,39 @@
-import streamlit as st
+from pathlib import Path
 import pandas as pd
+import streamlit as st
 
 st.title("Student Performance Dashboard")
 
-data = pd.read_csv("cleaned_student_performance.csv")
+folder = Path(__file__).parent
+
+st.header("Assignment Questions")
+
+question_files = [
+    "question1.txt",
+    "question3.txt",
+    "question 03.txt",
+    "question4.py",
+]
+
+for filename in question_files:
+    file = folder / filename
+    if file.exists():
+        st.subheader(filename)
+        content = file.read_text(encoding="utf-8")
+
+        if filename.endswith(".py"):
+            st.code(content, language="python")
+        else:
+            st.markdown(content)
+
+st.header("Student Performance Data")
+
+csv_file = folder / "cleaned_student_performance.csv"
+data = pd.read_csv(csv_file)
 
 st.metric("Number of students", len(data))
 
 number_columns = data.select_dtypes(include="number").columns
-
 if len(number_columns) > 0:
     st.subheader("Average scores")
     st.bar_chart(data[number_columns].mean())
