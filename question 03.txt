@@ -7,7 +7,7 @@ f = t**3 - 6*t**2 + 9*t + 2
 print("Factorised:", sp.factor(f))
 
 # (b) Solve equations
-print("f(t) = 0:", sp.solve(f, t))
+print("f(t) = 0:", sp.solve(f, t)) 
 print("f(t) = 2:", sp.solve(f - 2, t))
 
 # (c) First and second derivatives
